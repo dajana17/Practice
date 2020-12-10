@@ -1,4 +1,4 @@
-#PRACTICE
+PRACTICE
 Data processing for genomics
 
 Objective
