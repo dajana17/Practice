@@ -50,6 +50,6 @@ fi
 sleep 2 
 
 
-cd TTP/REZULTAT
+cd TTP/REZULTAT 
 multiqc .
 
