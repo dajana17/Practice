@@ -1,3 +1,0 @@
-Module	Section	Sample Name	Source
-Samtools	stats	test_new_dup_dna_stats	/home/dajana/TTP/REZULTAT/BOWTIE/test_new_dup_dna_stats.txt
-fastp	all_sections	test_new_dup_dna_1	/home/dajana/TTP/REZULTAT/FASTP/fastp.json

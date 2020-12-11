@@ -1,8 +1,8 @@
 {
     "report_data_sources": {
-        "Samtools": {
-            "stats": {
-                "test_new_dup_dna_stats": "/home/dajana/TTP/REZULTAT/BOWTIE/test_new_dup_dna_stats.txt"
+        "Bowtie 2 / HiSAT2": {
+            "all_sections": {
+                "file": "/home/dajana/TTP/REZULTAT/BOWTIE/file.log"
             }
         },
         "fastp": {
@@ -13,53 +13,20 @@
     },
     "report_general_stats_data": [
         {
-            "test_new_dup_dna_stats": {
-                "raw_total_sequences": 2530.0,
-                "filtered_sequences": 0.0,
-                "sequences": 2530.0,
-                "is_sorted": 1.0,
-                "1st_fragments": 1265.0,
-                "last_fragments": 1265.0,
-                "reads_mapped": 2295.0,
-                "reads_mapped_and_paired": 2060.0,
-                "reads_unmapped": 235.0,
-                "reads_properly_paired": 1720.0,
-                "reads_paired": 2530.0,
-                "reads_duplicated": 0.0,
-                "reads_MQ0": 0.0,
-                "reads_QC_failed": 0.0,
-                "non-primary_alignments": 0.0,
-                "total_length": 202400.0,
-                "total_first_fragment_length": 101200.0,
-                "total_last_fragment_length": 101200.0,
-                "bases_mapped": 183600.0,
-                "bases_mapped_(cigar)": 183600.0,
-                "bases_trimmed": 0.0,
-                "bases_duplicated": 0.0,
-                "mismatches": 1630.0,
-                "error_rate": 0.008877995,
-                "average_length": 80.0,
-                "average_first_fragment_length": 80.0,
-                "average_last_fragment_length": 80.0,
-                "maximum_length": 80.0,
-                "maximum_first_fragment_length": 80.0,
-                "maximum_last_fragment_length": 80.0,
-                "average_quality": 40.9,
-                "insert_size_average": 225.1,
-                "insert_size_standard_deviation": 24.7,
-                "inward_oriented_pairs": 860.0,
-                "outward_oriented_pairs": 170.0,
-                "pairs_with_other_orientation": 0.0,
-                "pairs_on_different_chromosomes": 0.0,
-                "percentage_of_properly_paired_reads_(%)": 68.0,
-                "reads_mapped_percent": 90.71146245059289,
-                "reads_mapped_and_paired_percent": 81.42292490118577,
-                "reads_unmapped_percent": 9.288537549407115,
-                "reads_properly_paired_percent": 67.98418972332016,
-                "reads_paired_percent": 100.0,
-                "reads_duplicated_percent": 0.0,
-                "reads_MQ0_percent": 0.0,
-                "reads_QC_failed_percent": 0.0
+            "file": {
+                "total_reads": 1265,
+                "paired_total": 1265,
+                "paired_aligned_none": 405,
+                "paired_aligned_one": 860,
+                "paired_aligned_multi": 0,
+                "paired_aligned_discord_one": 170,
+                "paired_aligned_mate_none": 235,
+                "paired_aligned_mate_one": 235,
+                "paired_aligned_mate_multi": 0,
+                "overall_alignment_rate": 90.71,
+                "paired_aligned_mate_multi_halved": 0.0,
+                "paired_aligned_mate_none_halved": 117.5,
+                "paired_aligned_mate_one_halved": 117.5
             }
         },
         {
@@ -89,76 +56,15 @@
     ],
     "report_general_stats_headers": [
         {
-            "error_rate": {
-                "title": "Error rate",
-                "description": "Error rate: mismatches (NM) / bases mapped (CIGAR)",
-                "min": 0,
-                "max": 100,
-                "suffix": "%",
-                "scale": "OrRd",
-                "format": "{:,.2f}",
-                "modify": 100.0,
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-error_rate",
-                "colour": "55,126,184",
-                "hidden": null,
-                "ceiling": null,
-                "floor": null,
-                "minRange": null,
-                "shared_key": null,
-                "placement": 1000.0,
-                "dmax": 100.0,
-                "dmin": 0.0
-            },
-            "non-primary_alignments": {
-                "title": "M Non-Primary",
-                "description": "Non-primary alignments (millions)",
-                "min": 0,
-                "scale": "PuBu",
-                "modify": 1e-06,
-                "shared_key": "read_count",
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-non_primary_alignments",
-                "format": "{:,.1f}",
-                "colour": "55,126,184",
-                "hidden": null,
-                "max": null,
-                "ceiling": null,
-                "floor": null,
-                "minRange": null,
-                "placement": 1000.0,
-                "dmax": 0.0025299999999999997,
-                "dmin": 0.0
-            },
-            "reads_mapped": {
-                "title": "M Reads Mapped",
-                "description": "Reads Mapped in the bam file (millions)",
-                "min": 0,
-                "modify": 1e-06,
-                "shared_key": "read_count",
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-reads_mapped",
-                "scale": "GnBu",
-                "format": "{:,.1f}",
-                "colour": "55,126,184",
-                "hidden": null,
-                "max": null,
-                "ceiling": null,
-                "floor": null,
-                "minRange": null,
-                "placement": 1000.0,
-                "dmax": 0.0025299999999999997,
-                "dmin": 0.0
-            },
-            "reads_mapped_percent": {
-                "title": "% Mapped",
-                "description": "% Mapped Reads",
+            "overall_alignment_rate": {
+                "title": "% Aligned",
+                "description": "overall alignment rate",
                 "max": 100,
                 "min": 0,
                 "suffix": "%",
-                "scale": "RdYlGn",
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-reads_mapped_percent",
+                "scale": "YlGn",
+                "namespace": "Bowtie 2 / HiSAT2",
+                "rid": "mqc-generalstats-bowtie_2_hisat2-overall_alignment_rate",
                 "format": "{:,.1f}",
                 "colour": "55,126,184",
                 "hidden": null,
@@ -169,68 +75,6 @@
                 "modify": null,
                 "placement": 1000.0,
                 "dmax": 100.0,
-                "dmin": 0.0
-            },
-            "reads_properly_paired_percent": {
-                "title": "% Proper Pairs",
-                "description": "% Properly Paired Reads",
-                "max": 100,
-                "min": 0,
-                "suffix": "%",
-                "scale": "RdYlGn",
-                "hidden": false,
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-reads_properly_paired_percent",
-                "format": "{:,.1f}",
-                "colour": "55,126,184",
-                "ceiling": null,
-                "floor": null,
-                "minRange": null,
-                "shared_key": null,
-                "modify": null,
-                "placement": 1000.0,
-                "dmax": 100.0,
-                "dmin": 0.0
-            },
-            "reads_MQ0_percent": {
-                "title": "% MapQ 0 Reads",
-                "description": "% of Reads that are Ambiguously Placed (MapQ=0)",
-                "max": 100,
-                "min": 0,
-                "suffix": "%",
-                "scale": "OrRd",
-                "hidden": true,
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-reads_MQ0_percent",
-                "format": "{:,.1f}",
-                "colour": "55,126,184",
-                "ceiling": null,
-                "floor": null,
-                "minRange": null,
-                "shared_key": null,
-                "modify": null,
-                "placement": 1000.0,
-                "dmax": 100.0,
-                "dmin": 0.0
-            },
-            "raw_total_sequences": {
-                "title": "M Total seqs",
-                "description": "Total sequences in the bam file (millions)",
-                "min": 0,
-                "modify": 1e-06,
-                "shared_key": "read_count",
-                "namespace": "Samtools",
-                "rid": "mqc-generalstats-samtools-raw_total_sequences",
-                "scale": "GnBu",
-                "format": "{:,.1f}",
-                "colour": "55,126,184",
-                "hidden": null,
-                "max": null,
-                "ceiling": null,
-                "floor": null,
-                "minRange": null,
-                "placement": 1000.0,
-                "dmax": 0.0025299999999999997,
                 "dmin": 0.0
             }
         },
@@ -364,254 +208,51 @@
     ],
     "report_multiqc_command": "/home/dajana/.local/bin/multiqc .",
     "report_plot_data": {
-        "samtools_alignment_plot": {
+        "bowtie2_pe_plot": {
             "plot_type": "bar_graph",
             "samples": [
                 [
-                    "test_new_dup_dna_stats"
+                    "file"
                 ]
             ],
             "datasets": [
                 [
                     {
-                        "name": "Mapped",
+                        "name": "PE mapped uniquely",
                         "data": [
-                            2295.0
+                            860.0
                         ],
-                        "color": "#437bb1"
+                        "color": "#20568f"
                     },
                     {
-                        "name": "Unmapped",
+                        "name": "PE mapped discordantly uniquely",
                         "data": [
-                            235.0
+                            170.0
                         ],
-                        "color": "#b1084c"
+                        "color": "#5c94ca"
+                    },
+                    {
+                        "name": "PE one mate mapped uniquely",
+                        "data": [
+                            117.5
+                        ],
+                        "color": "#95ceff"
+                    },
+                    {
+                        "name": "PE neither mate aligned",
+                        "data": [
+                            117.5
+                        ],
+                        "color": "#981919"
                     }
                 ]
             ],
             "config": {
-                "id": "samtools_alignment_plot",
-                "title": "Samtools stats: Alignment Scores",
                 "ylab": "# Reads",
-                "cpswitch_counts_label": "Number of Reads"
+                "cpswitch_counts_label": "Number of Reads",
+                "id": "bowtie2_pe_plot",
+                "title": "Bowtie 2: PE Alignment Scores"
             }
-        },
-        "samtools-stats-dp": {
-            "plot_type": "beeswarm",
-            "samples": [
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ],
-                [
-                    "test_new_dup_dna_stats"
-                ]
-            ],
-            "datasets": [
-                [
-                    0.00253
-                ],
-                [
-                    0.00206
-                ],
-                [
-                    0.00172
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.1836
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.0
-                ],
-                [
-                    0.00086
-                ],
-                [
-                    0.00017
-                ]
-            ],
-            "categories": [
-                {
-                    "namespace": "",
-                    "title": "Total sequences",
-                    "description": "Total sequences",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Mapped &amp; paired",
-                    "description": "Paired-end technology bit set + both mates mapped",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Properly paired",
-                    "description": "Proper-pair bit set",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Duplicated",
-                    "description": "PCR or optical duplicate bit set",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "QC Failed",
-                    "description": "QC Failed",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Reads MQ0",
-                    "description": "Reads mapped and MQ=0",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Mapped bases (CIGAR)",
-                    "description": "Mapped bases (CIGAR)",
-                    "max": 0.1836,
-                    "min": 0.0,
-                    "suffix": "M bases",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Bases Trimmed",
-                    "description": "Bases Trimmed",
-                    "max": 0.1836,
-                    "min": 0.0,
-                    "suffix": "M bases",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Duplicated bases",
-                    "description": "Duplicated bases",
-                    "max": 0.1836,
-                    "min": 0.0,
-                    "suffix": "M bases",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Diff chromosomes",
-                    "description": "Pairs on different chromosomes",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Other orientation",
-                    "description": "Pairs with other orientation",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Inward pairs",
-                    "description": "Inward oriented pairs",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                },
-                {
-                    "namespace": "",
-                    "title": "Outward pairs",
-                    "description": "Outward oriented pairs",
-                    "max": 0.00253,
-                    "min": 0.0,
-                    "suffix": "M reads",
-                    "decimalPlaces": 2,
-                    "bordercol": "rgb(55,126,184)"
-                }
-            ]
         },
         "fastp_filtered_reads_plot": {
             "plot_type": "bar_graph",
@@ -4829,54 +4470,21 @@
         }
     },
     "report_saved_raw_data": {
-        "multiqc_samtools_stats": {
-            "test_new_dup_dna_stats": {
-                "raw_total_sequences": 2530.0,
-                "filtered_sequences": 0.0,
-                "sequences": 2530.0,
-                "is_sorted": 1.0,
-                "1st_fragments": 1265.0,
-                "last_fragments": 1265.0,
-                "reads_mapped": 2295.0,
-                "reads_mapped_and_paired": 2060.0,
-                "reads_unmapped": 235.0,
-                "reads_properly_paired": 1720.0,
-                "reads_paired": 2530.0,
-                "reads_duplicated": 0.0,
-                "reads_MQ0": 0.0,
-                "reads_QC_failed": 0.0,
-                "non-primary_alignments": 0.0,
-                "total_length": 202400.0,
-                "total_first_fragment_length": 101200.0,
-                "total_last_fragment_length": 101200.0,
-                "bases_mapped": 183600.0,
-                "bases_mapped_(cigar)": 183600.0,
-                "bases_trimmed": 0.0,
-                "bases_duplicated": 0.0,
-                "mismatches": 1630.0,
-                "error_rate": 0.008877995,
-                "average_length": 80.0,
-                "average_first_fragment_length": 80.0,
-                "average_last_fragment_length": 80.0,
-                "maximum_length": 80.0,
-                "maximum_first_fragment_length": 80.0,
-                "maximum_last_fragment_length": 80.0,
-                "average_quality": 40.9,
-                "insert_size_average": 225.1,
-                "insert_size_standard_deviation": 24.7,
-                "inward_oriented_pairs": 860.0,
-                "outward_oriented_pairs": 170.0,
-                "pairs_with_other_orientation": 0.0,
-                "pairs_on_different_chromosomes": 0.0,
-                "percentage_of_properly_paired_reads_(%)": 68.0,
-                "reads_mapped_percent": 90.71146245059289,
-                "reads_mapped_and_paired_percent": 81.42292490118577,
-                "reads_unmapped_percent": 9.288537549407115,
-                "reads_properly_paired_percent": 67.98418972332016,
-                "reads_paired_percent": 100.0,
-                "reads_duplicated_percent": 0.0,
-                "reads_MQ0_percent": 0.0,
-                "reads_QC_failed_percent": 0.0
+        "multiqc_bowtie2": {
+            "file": {
+                "total_reads": 1265,
+                "paired_total": 1265,
+                "paired_aligned_none": 405,
+                "paired_aligned_one": 860,
+                "paired_aligned_multi": 0,
+                "paired_aligned_discord_one": 170,
+                "paired_aligned_mate_none": 235,
+                "paired_aligned_mate_one": 235,
+                "paired_aligned_mate_multi": 0,
+                "overall_alignment_rate": 90.71,
+                "paired_aligned_mate_multi_halved": 0.0,
+                "paired_aligned_mate_none_halved": 117.5,
+                "paired_aligned_mate_one_halved": 117.5
             }
         },
         "multiqc_fastp": {
@@ -13271,14 +12879,8 @@
             }
         },
         "multiqc_general_stats": {
-            "test_new_dup_dna_stats": {
-                "Samtools_mqc-generalstats-samtools-error_rate": 0.008877995,
-                "Samtools_mqc-generalstats-samtools-non_primary_alignments": 0.0,
-                "Samtools_mqc-generalstats-samtools-reads_mapped": 2295.0,
-                "Samtools_mqc-generalstats-samtools-reads_mapped_percent": 90.71146245059289,
-                "Samtools_mqc-generalstats-samtools-reads_properly_paired_percent": 67.98418972332016,
-                "Samtools_mqc-generalstats-samtools-reads_MQ0_percent": 0.0,
-                "Samtools_mqc-generalstats-samtools-raw_total_sequences": 2530.0
+            "file": {
+                "Bowtie 2 / HiSAT2_mqc-generalstats-bowtie_2_hisat2-overall_alignment_rate": 90.71
             },
             "test_new_dup_dna_1": {
                 "fastp_mqc-generalstats-fastp-pct_duplication": 11.25,
@@ -13296,7 +12898,7 @@
     "config_analysis_dir": [
         "."
     ],
-    "config_creation_date": "2020-12-05, 14:48",
+    "config_creation_date": "2020-12-10, 18:41",
     "config_git_hash": null,
     "config_intro_text": null,
     "config_report_comment": null,
