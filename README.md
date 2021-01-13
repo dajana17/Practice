@@ -13,6 +13,6 @@ Variant Calling Pipeline
     - Visualise statistics from the pipeline: Summarising outputs of FASTP tool and Bowtie2 alignment using MultiQC tool
     
     
-    -
+    -trtrtrtrt
     -
     -
