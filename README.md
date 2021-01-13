@@ -15,4 +15,3 @@ Variant Calling Pipeline
     
     -trtrtrtrt
     -gghgghghghgjhgjhghghg
-    -tyttytytytyt
